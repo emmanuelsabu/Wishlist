@@ -26,19 +26,18 @@ function SignUp({ navigation }) {
     let username=val.username
     if(val.password==val.reEnterPassword)
     {
-      console.log(BaseURL+'user/createUser');
       axios.post(BaseURL+'user/createUser',{
         user_email : username,
         user_password: passsword
       }).then
       (res=>
         {
+          console.log("Done")
           console.log(res.data)
         }).catch(function(error)
       {
         alert(JSON.stringify(error.message))
       })
-      console.log("Done")
       //Post Using Axios
     }
     else alert("Passwords doesn't Match")
