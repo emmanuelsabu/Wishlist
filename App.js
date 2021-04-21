@@ -17,8 +17,7 @@ function App(props) {
         <Drawer.Screen name="AppStackNavigator" component={AppStackNavigator} />
       </Drawer.Navigator>
     </NavigationContainer>
-    // <Filter />
-    </Provider>
+   </Provider>
 
   );
 }

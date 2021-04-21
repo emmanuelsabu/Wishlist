@@ -11,18 +11,8 @@ export const counterSlice = createSlice({
         state.authToken=action.payload;
         console.log(state.authToken)
     },
-    increment: (state) => {
-      
-      state.value += 1
-    },
-    decrement: (state) => {
-      state.value -= 1
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload
-    },
   },
 })
-export const { increment, decrement, incrementByAmount,saveAuthToken } = counterSlice.actions
+export const { saveAuthToken } = counterSlice.actions;
 
-export default counterSlice.reducer
+export default counterSlice.reducer;

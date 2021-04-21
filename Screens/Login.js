@@ -17,7 +17,7 @@ const validationSchema=Yup.object().shape(
 
 
 function Login({ navigation }) {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
   const loginProcess=(val)=>
   {
@@ -27,16 +27,16 @@ function Login({ navigation }) {
     {
       username:username,
       password:password
-    }).then
-    (res=>
+    }).then(res=>
       {
-        console.log(res.data)
-        dispatch(saveAuthToken(res.data))
+        console.log(res.data);
+        navigation.navigate("Home")
+
+        // dispatch(saveAuthToken(res.data))
       }).catch(function(error)
       {
         alert(JSON.stringify(error.message))
       })
-    navigation.navigate("Home")
   }
 
   return (
