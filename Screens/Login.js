@@ -10,6 +10,7 @@ import {
 } from "react-native-responsive-screen";
 import BaseURL from "../Networking/Api";
 import { useDispatch } from "react-redux";
+import jwtDecode from "jwt-decode";
 
 const validationSchema=Yup.object().shape(
   {username: Yup.string().required().email().label("Email"),
@@ -30,8 +31,11 @@ function Login({ navigation }) {
     }).then(res=>
       {
         console.log(res.data);
-        navigation.navigate("Home")
 
+        const user=jwtDecode(res.data.accessToken);
+        console.log("hello",user);
+
+        navigation.navigate("Home")
         // dispatch(saveAuthToken(res.data))
       }).catch(function(error)
       {
